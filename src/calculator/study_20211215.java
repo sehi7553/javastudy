@@ -1,3 +1,4 @@
+package calculator;
 import java.util.Scanner;
 
 public class study_20211215 {

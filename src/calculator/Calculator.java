@@ -1,3 +1,4 @@
+package calculator;
 
 public interface Calculator{
 	public int plus(int x, int y);
