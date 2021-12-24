@@ -24,3 +24,4 @@ public class java_20211215_2 {
 		}
 	}
 }
+
