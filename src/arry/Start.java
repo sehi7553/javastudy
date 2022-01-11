@@ -1,29 +1,32 @@
 package arry;
-import java.util.Scanner;
-import java.util.Arrays;
-
 public class Start {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("오름차순으로 정렬해주는 기능");
-        System.out.println("랜덤으로 숫자 3개를 입력하세요");
-        int num[] = new int[3];
-        for(int i = 0; i < num.length; i++){
-            num[i] = sc.nextInt();
-        }
-        for (int i = 0; i < num.length; i++) {
-            for (int j = i+1; j < num.length; j++) {
-                if (num[i] > num[j]) {
-                        int temp = num[j];
-                        num[j] = num[i];
-                        num[i] = temp;
-                } else {
-                        break;
-                }
+    public static void sort(int[] arr){
+        sort(arr, 0);
+    }
+    public static void sort(int[] arr, int start){
+        if(start < arr.length -1){
+            int min_index = start;
+            for (int i = start; i < arr.length; i++){
+                if(arr[i] < arr[min_index]) min_index = i;
             }
-        }
-        for (int i = 0; i < num.length; i++) {
-            System.out.print(num[i] + " ");
+            swap(arr, start, min_index);
+            sort(arr, start +1);
         }
     }
+    public static void swap (int[] arr, int index1, int index2){
+        int tmp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = tmp;
+    }
+    public static void array(int[] arr){
+        for (int data : arr){
+            System.out.print(data + ",");
+        }
+        System.out.println();
+    }
+   public static void main(String[] args) {
+       int[] arr = {6, 4, 10, 3, 7, 8, 5, 2, 9, 1};
+       sort(arr);
+       array(arr);
+   }
 }
