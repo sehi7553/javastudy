@@ -20,7 +20,7 @@ public class Start {
     }
     public static void array(int[] arr){
         for (int data : arr){
-            System.out.print(data + ",");
+            System.out.print(data + " ");
         }
         System.out.println();
     }
